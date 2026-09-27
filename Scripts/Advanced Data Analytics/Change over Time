@@ -1,0 +1,7 @@
+-- How many customers were added each year
+Select
+DATETRUNC(Year,create_date) as create_year,
+Count(customer_key) as total_customers
+from Gold.dim_customers
+Group by DATETRUNC(Year,create_date)
+Order by DATETRUNC(Year,create_date)
